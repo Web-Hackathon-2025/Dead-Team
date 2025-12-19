@@ -1,0 +1,45 @@
+## Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+bin/
+obj/
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## ASP.NET
+wwwroot/lib/
+
+## Rider / VS Code
+.idea/
+.vscode/
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Logs
+*.log
+
+## NuGet
+*.nupkg
+packages/
+
+## Environment files
+appsettings.Development.json
+appsettings.Local.json
+
+## Database files (agar local DB use kar rahe ho)
+*.mdf
+*.ldf
+
+## Others
+*.cache
+.env
