@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Karigar.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4aef535ba20f4c9ffaf967585d8ec3e8b11afe95")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f50e2efecbc91288de8b43e85f356a59ee410cd9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Karigar.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Karigar.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
