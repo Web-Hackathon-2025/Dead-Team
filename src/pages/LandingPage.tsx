@@ -1,16 +1,10 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import HeroSearch from '../components/HeroSearch'
-import CategoryCard from '../components/CategoryCard'
+import ServiceCard from '../components/ServiceCard'
 import FeatureSection from '../components/FeatureSection'
-import TestimonialCard from '../components/TestimonialCard'
+import Testimonials from '../components/Testimonials'
 import {
-  Wrench,
-  Zap,
-  GraduationCap,
-  Sparkles,
-  Wind,
-  Car,
   Search,
   MessageSquare,
   CheckCircle,
@@ -22,13 +16,43 @@ import {
 } from 'lucide-react'
 
 const LandingPage = () => {
-  const categories = [
-    { icon: Wrench, title: 'Plumber', href: '/services/plumber' },
-    { icon: Zap, title: 'Electrician', href: '/services/electrician' },
-    { icon: GraduationCap, title: 'Tutor', href: '/services/tutor' },
-    { icon: Sparkles, title: 'Cleaner', href: '/services/cleaner' },
-    { icon: Wind, title: 'AC Technician', href: '/services/ac-technician' },
-    { icon: Car, title: 'Mechanic', href: '/services/mechanic' },
+  const services = [
+    { 
+      title: 'Plumber', 
+      subtitle: 'Expert Plumbing Services',
+      href: '/services/plumber',
+      image: undefined // Placeholder for now
+    },
+    { 
+      title: 'Electrician', 
+      subtitle: 'Professional Electrical Work',
+      href: '/services/electrician',
+      image: undefined
+    },
+    { 
+      title: 'Tutor', 
+      subtitle: 'Personalized Learning',
+      href: '/services/tutor',
+      image: undefined
+    },
+    { 
+      title: 'Cleaner', 
+      subtitle: 'Spotless Cleaning Services',
+      href: '/services/cleaner',
+      image: undefined
+    },
+    { 
+      title: 'AC Technician', 
+      subtitle: 'Cooling Solutions',
+      href: '/services/ac-technician',
+      image: undefined
+    },
+    { 
+      title: 'Mechanic', 
+      subtitle: 'Auto Repair & Maintenance',
+      href: '/services/mechanic',
+      image: undefined
+    },
   ]
 
   const howItWorks = [
@@ -72,29 +96,6 @@ const LandingPage = () => {
     },
   ]
 
-  const testimonials = [
-    {
-      name: 'Rajesh Kumar',
-      role: 'Homeowner',
-      rating: 5,
-      text: 'Found an excellent plumber within minutes. The service was professional, on-time, and reasonably priced. Karigar made it so easy!',
-      location: 'Mumbai, Maharashtra',
-    },
-    {
-      name: 'Priya Sharma',
-      role: 'Small Business Owner',
-      rating: 5,
-      text: 'As a business owner, I needed reliable electricians. Karigar connected me with verified professionals who understood my needs.',
-      location: 'Delhi, NCR',
-    },
-    {
-      name: 'Amit Patel',
-      role: 'Parent',
-      rating: 5,
-      text: 'Found a great tutor for my daughter through Karigar. The platform is trustworthy and the reviews helped me make the right choice.',
-      location: 'Bangalore, Karnataka',
-    },
-  ]
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -228,13 +229,14 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
-            {categories.map((category, index) => (
-              <CategoryCard
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {services.map((service, index) => (
+              <ServiceCard
                 key={index}
-                icon={category.icon}
-                title={category.title}
-                href={category.href}
+                title={service.title}
+                subtitle={service.subtitle}
+                image={service.image}
+                href={service.href}
               />
             ))}
           </div>
@@ -267,33 +269,7 @@ const LandingPage = () => {
       </section>
 
       {/* Reviews & Social Proof */}
-      <section id="reviews" className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our Customers Say
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Real reviews from real customers in your community.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} {...testimonial} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <a
-              href="/reviews"
-              className="inline-flex items-center text-primary font-semibold hover:underline"
-            >
-              Read More Reviews <ArrowRight className="ml-2" size={18} />
-            </a>
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       {/* Final CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-secondary text-white">
