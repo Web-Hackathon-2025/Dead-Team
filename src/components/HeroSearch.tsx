@@ -1,5 +1,6 @@
 import { Search, MapPin } from 'lucide-react'
 import { useState } from 'react'
+import { Button } from './ui/button'
 
 const HeroSearch = () => {
   const [service, setService] = useState('')
@@ -39,12 +40,13 @@ const HeroSearch = () => {
         </div>
 
         {/* Search Button */}
-        <button
+        <Button
           type="submit"
-          className="bg-primary text-white px-8 py-3 rounded-xl hover:bg-[#059669] transition-colors duration-200 font-semibold whitespace-nowrap"
+          size="lg"
+          className="whitespace-nowrap rounded-xl"
         >
           Search
-        </button>
+        </Button>
       </div>
     </form>
   )

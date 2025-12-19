@@ -1,9 +1,10 @@
-import Navbar from '../components/Navbar'
+import { Link } from 'react-router-dom'
+import { Header } from '../components/ui/header-3'
 import Footer from '../components/Footer'
-import HeroSearch from '../components/HeroSearch'
 import ServiceCard from '../components/ServiceCard'
-import FeatureSection from '../components/FeatureSection'
 import Testimonials from '../components/Testimonials'
+import { Hero } from '../components/ui/animated-hero'
+import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-section-with-hover-effects'
 import {
   Search,
   MessageSquare,
@@ -13,7 +14,11 @@ import {
   Clock,
   Star,
   ArrowRight,
+  PhoneCall,
+  MoveRight,
+  Users,
 } from 'lucide-react'
+import { Button } from '../components/ui/button'
 
 const LandingPage = () => {
   const services = [
@@ -71,6 +76,11 @@ const LandingPage = () => {
       title: 'Get the Job Done',
       description: 'Track your service request in real-time. Leave reviews and build trust in your community.',
     },
+    {
+      icon: Users,
+      title: 'Build Your Network',
+      description: 'Connect with trusted professionals and build lasting relationships in your community.',
+    },
   ]
 
   const trustFeatures = [
@@ -94,126 +104,46 @@ const LandingPage = () => {
       title: 'Availability-Based Booking',
       description: 'Book services based on real-time availability. No more waiting or guessing.',
     },
+    {
+      icon: CheckCircle,
+      title: 'Quality Guaranteed',
+      description: 'Every service is backed by our quality guarantee. We ensure satisfaction.',
+    },
+    {
+      icon: MessageSquare,
+      title: 'Easy Communication',
+      description: 'Chat directly with service providers. Clear communication, better results.',
+    },
+    {
+      icon: Search,
+      title: 'Quick Discovery',
+      description: 'Find the right service provider in minutes, not hours. Fast and efficient.',
+    },
+    {
+      icon: Users,
+      title: 'Local Community',
+      description: 'Support your local economy by connecting with neighborhood professionals.',
+    },
   ]
 
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 text-balance">
-              Find trusted local services, right when you need them.
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8 text-balance">
-              Connect with verified service providers in your neighborhood. From plumbers to tutors, 
-              discover skilled professionals who deliver quality work.
-            </p>
-            
-            {/* Search Bar */}
-            <div className="mb-8">
-              <HeroSearch />
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="/services"
-                className="bg-primary text-white px-8 py-4 rounded-full hover:bg-[#059669] transition-colors duration-200 font-semibold text-lg shadow-lg hover:shadow-xl"
-              >
-                Find a Karigar Near You
-              </a>
-              <a
-                href="/become-provider"
-                className="bg-white text-primary border-2 border-primary px-8 py-4 rounded-full hover:bg-primary/5 transition-colors duration-200 font-semibold text-lg"
-              >
-                Offer Your Services
-              </a>
-            </div>
-          </div>
-        </div>
+      <section className="bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <Hero />
       </section>
 
       {/* How Karigar Works */}
       <section id="how-it-works" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How Karigar Works
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Three simple steps to get the service you need, when you need it.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {howItWorks.map((step, index) => (
-              <div key={index} className="relative">
-                <FeatureSection
-                  icon={step.icon}
-                  title={step.title}
-                  description={step.description}
-                />
-                {index < howItWorks.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-200 -z-10" style={{ width: 'calc(100% - 4rem)', marginLeft: '2rem' }} />
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Customer vs Provider Flow */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-blue-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">For Customers</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Find nearby experts in your area</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Track service requests in real-time</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Rate and review service providers</span>
-                </li>
-              </ul>
-              <a
-                href="/services"
-                className="inline-flex items-center text-primary font-semibold hover:underline"
-              >
-                Browse Services <ArrowRight className="ml-2" size={18} />
-              </a>
-            </div>
-
-            <div className="bg-green-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">For Service Providers</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Manage your profile and availability</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Accept or reject job requests</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Grow your local reputation</span>
-                </li>
-              </ul>
-              <a
-                href="/become-provider"
-                className="inline-flex items-center text-primary font-semibold hover:underline"
-              >
-                Join as a Karigar <ArrowRight className="ml-2" size={18} />
-              </a>
-            </div>
-          </div>
+          <FeaturesSectionWithHoverEffects
+            features={howItWorks}
+            title="How Karigar Works"
+            subtitle="Four simple steps to get the service you need, when you need it."
+          />
         </div>
       </section>
 
@@ -229,7 +159,7 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -244,27 +174,13 @@ const LandingPage = () => {
       </section>
 
       {/* Why Karigar - Trust & Value */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Karigar?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We've built a platform that prioritizes trust, transparency, and local connections.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {trustFeatures.map((feature, index) => (
-              <FeatureSection
-                key={index}
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-              />
-            ))}
-          </div>
+          <FeaturesSectionWithHoverEffects
+            features={trustFeatures}
+            title="Why Choose Karigar?"
+            subtitle="We've built a platform that prioritizes trust, transparency, and local connections."
+          />
         </div>
       </section>
 
@@ -272,27 +188,25 @@ const LandingPage = () => {
       <Testimonials />
 
       {/* Final CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-secondary text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-primary-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Ready to Find Your Next Service Provider?
           </h2>
           <p className="text-xl mb-8 text-white/90">
             Join thousands of satisfied customers who trust Karigar for their local service needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/services"
-              className="bg-white text-primary px-8 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 font-semibold text-lg shadow-lg"
-            >
-              Find Services Now
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="/contact">
+              <Button size="lg" className="gap-2 bg-white text-primary hover:bg-gray-100">
+                Contact Us <PhoneCall className="w-4 h-4" />
+              </Button>
             </a>
-            <a
-              href="/become-provider"
-              className="bg-white/10 text-white border-2 border-white px-8 py-4 rounded-full hover:bg-white/20 transition-colors duration-200 font-semibold text-lg"
-            >
-              Become a Karigar
-            </a>
+            <Link to="/signup?type=worker">
+              <Button size="lg" className="gap-2 bg-white/10 text-white border-2 border-white hover:bg-white/20">
+                Become a Karigar <MoveRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
