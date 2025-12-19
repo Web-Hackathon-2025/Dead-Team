@@ -62,8 +62,26 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+// Register Repositories
+builder.Services.AddScoped(typeof(Karigar.Core.Interfaces.Repositories.IBaseRepository<>), typeof(Karigar.Infrastructure.Repositories.BaseRepository<>));
+builder.Services.AddScoped(typeof(ILogger<>), typeof(Logger<>));
+builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.Customer.ICustomerRepository, Karigar.Infrastructure.Repositories.Customer.CustomerRepository>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.ServiceProvider.IServiceProviderRepository, Karigar.Infrastructure.Repositories.ServiceProvider.ServiceProviderRepository>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.Admin.IAdminRepository, Karigar.Infrastructure.Repositories.Admin.AdminRepository>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.Service.IServiceRepository, Karigar.Infrastructure.Repositories.Service.ServiceRepository>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.ServiceCategory.IServiceCategoryRepository, Karigar.Infrastructure.Repositories.ServiceCategory.ServiceCategoryRepository>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.ServiceRequest.IServiceRequestRepository, Karigar.Infrastructure.Repositories.ServiceRequest.ServiceRequestRepository>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.Review.IReviewRepository, Karigar.Infrastructure.Repositories.Review.ReviewRepository>();
+
 // Register Application Services
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Services.Customer.ICustomerService, Karigar.Application.Services.Customer.CustomerService>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Services.ServiceProvider.IServiceProviderService, Karigar.Application.Services.ServiceProvider.ServiceProviderService>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Services.Admin.IAdminService, Karigar.Application.Services.Admin.AdminService>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Services.ServiceCategory.IServiceCategoryService, Karigar.Application.Services.ServiceCategory.ServiceCategoryService>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Services.Service.IServiceService, Karigar.Application.Services.Service.ServiceService>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Services.ServiceRequest.IServiceRequestService, Karigar.Application.Services.ServiceRequest.ServiceRequestService>();
+builder.Services.AddScoped<Karigar.Core.Interfaces.Services.Review.IReviewService, Karigar.Application.Services.Review.ReviewService>();
 
 // Add Controllers
 builder.Services.AddControllers();
@@ -145,7 +163,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Karigar API V1");
-        c.RoutePrefix = string.Empty; // Set Swagger UI at app root
+        c.RoutePrefix = string.Empty; 
     });
 }
 
