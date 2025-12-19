@@ -12,7 +12,7 @@ namespace Karigar.Core.Interfaces.Services.Customer
         Task DeleteCustomerAsync(Guid customerId);
         Task<Models.Customer?> GetCustomerWithRequestsAsync(Guid customerId);
         Task<Models.Customer?> GetCustomerWithReviewsAsync(Guid customerId);
-        Task<IEnumerable<ServiceRequest>> GetCustomerBookingHistoryAsync(Guid customerId);
+        Task<IEnumerable<Models.ServiceRequest>> GetCustomerBookingHistoryAsync(Guid customerId);
     }
 }
 

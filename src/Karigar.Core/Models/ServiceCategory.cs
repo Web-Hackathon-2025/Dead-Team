@@ -6,7 +6,7 @@ namespace Karigar.Core.Models
         public string Description { get; set; } = string.Empty;
         public string? IconUrl { get; set; }
         
-        // Navigation properties
+
         public ICollection<Service> Services { get; set; } = new List<Service>();
     }
 }

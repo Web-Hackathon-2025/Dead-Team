@@ -9,7 +9,6 @@ namespace Karigar.Core.Models
         public DateTime? UpdatedAt { get; set; }
         public bool IsActive { get; set; } = true;
         
-        // Navigation properties
         public Customer? Customer { get; set; }
         public ServiceProvider? ServiceProvider { get; set; }
         public Admin? Admin { get; set; }

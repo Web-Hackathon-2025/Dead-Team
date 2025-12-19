@@ -17,7 +17,6 @@ namespace Karigar.Core.Models
         public string? PhoneNumber { get; set; }
         public bool IsVerified { get; set; } = false;
         
-        // Navigation properties
         public ApplicationUser User { get; set; } = null!;
         public ICollection<Service> Services { get; set; } = new List<Service>();
         public ICollection<ServiceRequest> ServiceRequests { get; set; } = new List<ServiceRequest>();

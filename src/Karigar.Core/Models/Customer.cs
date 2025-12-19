@@ -9,7 +9,6 @@ namespace Karigar.Core.Models
         public string City { get; set; } = string.Empty;
         public string? ProfilePictureUrl { get; set; }
         
-        // Navigation properties
         public ApplicationUser User { get; set; } = null!;
         public ICollection<ServiceRequest> ServiceRequests { get; set; } = new List<ServiceRequest>();
         public ICollection<Review> Reviews { get; set; } = new List<Review>();

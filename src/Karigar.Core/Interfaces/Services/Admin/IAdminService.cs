@@ -14,8 +14,8 @@ namespace Karigar.Core.Interfaces.Services.Admin
         Task<bool> ApproveServiceProviderAsync(Guid serviceProviderId);
         Task<bool> SuspendUserAsync(string userId);
         Task<bool> RemoveServiceProviderAccountAsync(Guid serviceProviderId);
-        Task<IEnumerable<ServiceRequest>> GetAllServiceRequestsAsync();
-        Task<IEnumerable<Review>> GetAllReviewsAsync();
+        Task<IEnumerable<Models.ServiceRequest>> GetAllServiceRequestsAsync();
+        Task<IEnumerable<Models.Review>> GetAllReviewsAsync();
         Task<bool> DeleteReviewAsync(Guid reviewId);
     }
 }

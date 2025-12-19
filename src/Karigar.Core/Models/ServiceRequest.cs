@@ -25,7 +25,6 @@ namespace Karigar.Core.Models
         public decimal? QuotedPrice { get; set; }
         public DateTime? CompletedDate { get; set; }
         
-        // Navigation properties
         public Customer Customer { get; set; } = null!;
         public ServiceProvider ServiceProvider { get; set; } = null!;
         public Service Service { get; set; } = null!;
