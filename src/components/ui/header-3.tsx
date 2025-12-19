@@ -31,7 +31,9 @@ import {
 	HelpCircle,
 	BarChart,
 	PlugIcon,
+	LayoutDashboard,
 } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 type LinkItem = {
 	title: string;
@@ -43,6 +45,7 @@ type LinkItem = {
 export function Header() {
 	const [open, setOpen] = React.useState(false);
 	const scrolled = useScroll(10);
+	const { user, isAuthenticated } = useAuth();
 
 	React.useEffect(() => {
 		if (open) {
@@ -77,7 +80,11 @@ export function Header() {
 								</NavigationMenuLink>
 							</NavigationMenuItem>
 							<NavigationMenuItem>
-								<NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-primary/10 hover:text-primary">Services</NavigationMenuTrigger>
+								<NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-primary/10 hover:text-primary">
+									<Link to="/services" className="hover:no-underline">
+										Services
+									</Link>
+								</NavigationMenuTrigger>
 								<NavigationMenuContent className="bg-white p-1 pr-1.5">
 									<ul className="bg-white grid w-lg grid-cols-2 gap-2 rounded-md border border-gray-200 p-2 shadow-lg">
 										{serviceLinks.map((item, i) => (
@@ -99,12 +106,23 @@ export function Header() {
 					</NavigationMenu>
 				</div>
 				<div className="hidden items-center gap-2 md:flex">
-					<Link to="/login">
-						<Button variant="outline">Login</Button>
-					</Link>
-					<Link to="/signup">
-						<Button>Sign Up</Button>
-					</Link>
+					{isAuthenticated ? (
+						<Link to={user?.type === 'customer' ? '/dashboard/customer' : '/dashboard/provider'}>
+							<Button className="gap-2">
+								<LayoutDashboard size={18} />
+								Dashboard
+							</Button>
+						</Link>
+					) : (
+						<>
+							<Link to="/login">
+								<Button variant="outline">Login</Button>
+							</Link>
+							<Link to="/signup">
+								<Button>Sign Up</Button>
+							</Link>
+						</>
+					)}
 				</div>
 				<Button
 					size="icon"
@@ -130,14 +148,25 @@ export function Header() {
 					</div>
 				</NavigationMenu>
 				<div className="flex flex-col gap-2">
-					<Link to="/login">
-						<Button variant="outline" className="w-full bg-transparent">
-							Login
-						</Button>
-					</Link>
-					<Link to="/signup">
-						<Button className="w-full">Sign Up</Button>
-					</Link>
+					{isAuthenticated ? (
+						<Link to={user?.type === 'customer' ? '/dashboard/customer' : '/dashboard/provider'}>
+							<Button className="w-full gap-2">
+								<LayoutDashboard size={18} />
+								Dashboard
+							</Button>
+						</Link>
+					) : (
+						<>
+							<Link to="/login">
+								<Button variant="outline" className="w-full bg-transparent">
+									Login
+								</Button>
+							</Link>
+							<Link to="/signup">
+								<Button className="w-full">Sign Up</Button>
+							</Link>
+						</>
+					)}
 				</div>
 			</MobileMenu>
 		</header>
@@ -185,7 +214,7 @@ function ListItem({
 }: React.ComponentProps<typeof NavigationMenuLink> & LinkItem) {
 	return (
 		<NavigationMenuLink className={cn('w-full flex flex-row gap-x-2 data-[active=true]:focus:bg-primary/10 data-[active=true]:hover:bg-primary/10 data-[active=true]:bg-primary/5 data-[active=true]:text-primary hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary rounded-sm p-2 transition-colors', className)} {...props} asChild>
-			<a href={href}>
+			<Link to={href}>
 				<div className="bg-gray-50 flex aspect-square size-12 items-center justify-center rounded-md border border-gray-200 shadow-sm">
 					<Icon className="text-gray-900 size-5" />
 				</div>
@@ -193,7 +222,7 @@ function ListItem({
 					<span className="font-medium text-gray-900">{title}</span>
 					{description && <span className="text-gray-600 text-xs">{description}</span>}
 				</div>
-			</a>
+			</Link>
 		</NavigationMenuLink>
 	);
 }
@@ -201,37 +230,37 @@ function ListItem({
 const serviceLinks: LinkItem[] = [
 	{
 		title: 'Plumber',
-		href: '/services/plumber',
+		href: '/services?category=Plumber',
 		description: 'Expert plumbing services',
 		icon: Wrench,
 	},
 	{
 		title: 'Electrician',
-		href: '/services/electrician',
+		href: '/services?category=Electrician',
 		description: 'Professional electrical work',
 		icon: Zap,
 	},
 	{
 		title: 'Tutor',
-		href: '/services/tutor',
+		href: '/services?category=Tutor',
 		description: 'Personalized learning',
 		icon: GraduationCap,
 	},
 	{
 		title: 'Cleaner',
-		href: '/services/cleaner',
+		href: '/services?category=Cleaner',
 		description: 'Spotless cleaning services',
 		icon: Sparkles,
 	},
 	{
 		title: 'AC Technician',
-		href: '/services/ac-technician',
+		href: '/services?category=AC Technician',
 		description: 'Cooling solutions',
 		icon: Wind,
 	},
 	{
 		title: 'Mechanic',
-		href: '/services/mechanic',
+		href: '/services?category=Mechanic',
 		description: 'Auto repair & maintenance',
 		icon: Car,
 	},

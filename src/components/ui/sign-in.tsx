@@ -4,19 +4,22 @@ import * as React from "react"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { User, Briefcase, ArrowLeft } from "lucide-react"
+import { useAuth, HARDCODED_CREDENTIALS } from "../../contexts/AuthContext"
 
 const SignIn = () => {
   const navigate = useNavigate()
+  const { login } = useAuth()
   const [userType, setUserType] = useState<"customer" | "worker">("customer")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   }
 
-  const handleSignIn = () => {
+  const handleSignIn = async () => {
     if (!email || !password) {
       setError("Please enter both email and password.")
       return
@@ -25,8 +28,28 @@ const SignIn = () => {
       setError("Please enter a valid email address.")
       return
     }
+
     setError("")
-    alert(`Sign in successful as ${userType === "customer" ? "Customer" : "Worker"}! (Demo)`)
+    setLoading(true)
+
+    try {
+      const success = await login(email, password, userType)
+      
+      if (success) {
+        // Redirect to appropriate dashboard
+        if (userType === "customer") {
+          navigate("/dashboard/customer")
+        } else {
+          navigate("/dashboard/provider")
+        }
+      } else {
+        setError("Invalid email or password. Please check your credentials.")
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -83,6 +106,15 @@ const SignIn = () => {
           </div>
         </div>
 
+        {/* Demo Credentials Info */}
+        <div className="w-full mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+          <p className="text-xs font-semibold text-blue-900 mb-2">Demo Credentials:</p>
+          <div className="text-xs text-blue-800 space-y-1">
+            <p><strong>Customer:</strong> {HARDCODED_CREDENTIALS.customer.email} / {HARDCODED_CREDENTIALS.customer.password}</p>
+            <p><strong>Worker:</strong> {HARDCODED_CREDENTIALS.worker.email} / {HARDCODED_CREDENTIALS.worker.password}</p>
+          </div>
+        </div>
+
         {/* Form */}
         <div className="flex flex-col w-full gap-4">
           <div className="w-full flex flex-col gap-3">
@@ -128,9 +160,10 @@ const SignIn = () => {
           <div>
             <button
               onClick={handleSignIn}
-              className="w-full bg-primary text-white font-medium px-5 py-3 rounded-full shadow-sm hover:bg-[#059669] transition-colors mb-3 text-sm"
+              disabled={loading}
+              className="w-full bg-primary text-white font-medium px-5 py-3 rounded-full shadow-sm hover:bg-[#059669] transition-colors mb-3 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Sign in
+              {loading ? "Signing in..." : "Sign in"}
             </button>
 
             {/* Google Sign In */}

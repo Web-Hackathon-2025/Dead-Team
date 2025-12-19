@@ -21,42 +21,47 @@ import {
 import { Button } from '../components/ui/button'
 
 const LandingPage = () => {
+  // Helper function to encode image paths for URLs
+  const getImagePath = (filename: string) => {
+    return `/Pics/${encodeURIComponent(filename)}`
+  }
+
   const services = [
     { 
       title: 'Plumber', 
       subtitle: 'Expert Plumbing Services',
-      href: '/services/plumber',
-      image: undefined // Placeholder for now
+      href: '/services?category=Plumber',
+      image: getImagePath('Plumber with his arms crossed _ Free Photo.jfif')
     },
     { 
       title: 'Electrician', 
       subtitle: 'Professional Electrical Work',
-      href: '/services/electrician',
-      image: undefined
+      href: '/services?category=Electrician',
+      image: getImagePath('Electrician.jfif')
     },
     { 
       title: 'Tutor', 
       subtitle: 'Personalized Learning',
-      href: '/services/tutor',
-      image: undefined
+      href: '/services?category=Tutor',
+      image: getImagePath('tutor 2.jpg')
     },
     { 
       title: 'Cleaner', 
       subtitle: 'Spotless Cleaning Services',
-      href: '/services/cleaner',
-      image: undefined
+      href: '/services?category=Cleaner',
+      image: getImagePath('Cleaner.jfif')
     },
     { 
       title: 'AC Technician', 
       subtitle: 'Cooling Solutions',
-      href: '/services/ac-technician',
-      image: undefined
+      href: '/services?category=AC Technician',
+      image: getImagePath('Ac Repair Mississauga.jfif')
     },
     { 
       title: 'Mechanic', 
       subtitle: 'Auto Repair & Maintenance',
-      href: '/services/mechanic',
-      image: undefined
+      href: '/services?category=Mechanic',
+      image: getImagePath('mechanic 2.jpg')
     },
   ]
 

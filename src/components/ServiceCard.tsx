@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { Link } from 'react-router-dom'
 
 interface ServiceCardProps {
   title: string
@@ -9,12 +10,12 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, subtitle, image, href = '#' }: ServiceCardProps) => {
   return (
-    <motion.a
-      href={href}
+    <motion.div
       className="group relative block h-[280px] md:h-[320px] rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300"
       whileHover={{ scale: 1.03, y: -8 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
+      <Link to={href} className="absolute inset-0 z-10" />
       {/* Background Image */}
       <motion.div 
         className="absolute inset-0"
@@ -59,7 +60,7 @@ const ServiceCard = ({ title, subtitle, image, href = '#' }: ServiceCardProps) =
         whileHover={{ backgroundColor: 'rgba(16, 185, 129, 0.1)' }}
         transition={{ duration: 0.3 }}
       />
-    </motion.a>
+    </motion.div>
   )
 }
 
