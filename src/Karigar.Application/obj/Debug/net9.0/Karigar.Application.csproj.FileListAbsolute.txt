@@ -14,3 +14,5 @@ D:\HAckathon\Dead-Team\src\Karigar.Application\obj\Debug\net9.0\Karigar.Applicat
 D:\HAckathon\Dead-Team\src\Karigar.Application\obj\Debug\net9.0\refint\Karigar.Application.dll
 D:\HAckathon\Dead-Team\src\Karigar.Application\obj\Debug\net9.0\Karigar.Application.pdb
 D:\HAckathon\Dead-Team\src\Karigar.Application\obj\Debug\net9.0\ref\Karigar.Application.dll
+D:\HAckathon\Dead-Team\src\Karigar.Application\bin\Debug\net9.0\Karigar.Infrastructure.dll
+D:\HAckathon\Dead-Team\src\Karigar.Application\bin\Debug\net9.0\Karigar.Infrastructure.pdb
