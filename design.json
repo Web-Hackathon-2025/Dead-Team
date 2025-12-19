@@ -1,0 +1,255 @@
+{
+    "designSystem": {
+      "name": "Modern Service Marketplace UI",
+      "category": "Professional Services / Hyperlocal / SaaS Marketing",
+      "personality": [
+        "Clean",
+        "Trustworthy",
+        "Friendly",
+        "Professional",
+        "Modern",
+        "Stress-free"
+      ],
+  
+      "visualStyle": {
+        "theme": "Light with accent highlights",
+        "tone": "Calm, fresh, reassuring",
+        "brandFeel": "Human-centric, service-oriented",
+        "contrastLevel": "Medium",
+        "roundedness": "High"
+      },
+  
+      "colorSystem": {
+        "primary": {
+          "role": "Brand identity, CTAs",
+          "style": "Fresh green / teal family",
+          "usageRules": [
+            "Primary buttons",
+            "Key highlights",
+            "Active states"
+          ]
+        },
+        "secondary": {
+          "role": "Trust & structure",
+          "style": "Muted blue / blue-gray family",
+          "usageRules": [
+            "Hero backgrounds",
+            "Section dividers",
+            "Navigation accents"
+          ]
+        },
+        "neutrals": {
+          "backgrounds": [
+            "White",
+            "Very light gray"
+          ],
+          "text": [
+            "Dark gray",
+            "Near-black"
+          ]
+        },
+        "accent": {
+          "role": "Micro emphasis",
+          "style": "Soft gradients or light overlays",
+          "usageRules": [
+            "Badges",
+            "Decorative shapes",
+            "Section separators"
+          ]
+        }
+      },
+  
+      "typography": {
+        "fontStyle": "Modern sans-serif",
+        "fontPersonality": [
+          "Readable",
+          "Friendly",
+          "Neutral"
+        ],
+        "hierarchy": {
+          "heroHeading": {
+            "size": "Extra Large",
+            "weight": "Bold",
+            "lineHeight": "Tight"
+          },
+          "sectionHeading": {
+            "size": "Large",
+            "weight": "Semi-Bold"
+          },
+          "bodyText": {
+            "size": "Regular",
+            "weight": "Normal",
+            "lineHeight": "Comfortable"
+          },
+          "labelsAndMeta": {
+            "size": "Small",
+            "weight": "Medium"
+          }
+        }
+      },
+  
+      "layoutSystem": {
+        "grid": {
+          "type": "Responsive column grid",
+          "desktop": "12-column",
+          "tablet": "8-column",
+          "mobile": "4-column"
+        },
+        "maxWidth": "Centered container",
+        "sectionSpacing": {
+          "vertical": "Generous",
+          "horizontal": "Consistent padding"
+        },
+        "alignment": {
+          "primary": "Left-aligned content",
+          "cta": "Centered or right-weighted"
+        }
+      },
+  
+      "components": {
+        "navigationBar": {
+          "position": "Top",
+          "style": "Minimal",
+          "elements": [
+            "Logo (left)",
+            "Navigation links (center/right)",
+            "Primary CTA button"
+          ],
+          "behavior": "Sticky or fixed on scroll"
+        },
+  
+        "heroSection": {
+          "layout": "Split layout",
+          "leftSide": [
+            "Primary headline",
+            "Short supporting text",
+            "Primary CTA button"
+          ],
+          "rightSide": [
+            "Human-centric visual placeholder"
+          ],
+          "background": "Soft gradient or overlay"
+        },
+  
+        "trustIndicators": {
+          "type": "Logo strip / badges",
+          "placement": "Below hero",
+          "style": "Low contrast, monochrome"
+        },
+  
+        "serviceCards": {
+          "layout": "Grid-based",
+          "cardStyle": {
+            "borderRadius": "Large",
+            "shadow": "Soft",
+            "hoverEffect": "Slight lift or glow"
+          },
+          "contentStructure": [
+            "Visual placeholder",
+            "Service title",
+            "CTA chip or button"
+          ]
+        },
+  
+        "faqSection": {
+          "layout": "Two-column",
+          "interaction": "Accordion",
+          "defaultState": "Collapsed",
+          "visualWeight": "Light"
+        },
+  
+        "ctaBanner": {
+          "style": "Full-width",
+          "background": "High contrast vs page",
+          "content": [
+            "Motivational text",
+            "Single primary CTA"
+          ]
+        },
+  
+        "footer": {
+          "layout": "Multi-column",
+          "contentTypes": [
+            "Brand summary",
+            "Navigation links",
+            "Contact info",
+            "Newsletter input"
+          ],
+          "style": "Muted, low-contrast"
+        }
+      },
+  
+      "buttons": {
+        "primary": {
+          "shape": "Pill / Rounded",
+          "size": "Medium to Large",
+          "style": "Solid fill",
+          "interaction": [
+            "Hover brighten",
+            "Soft shadow"
+          ]
+        },
+        "secondary": {
+          "style": "Outline or subtle fill",
+          "contrast": "Lower than primary"
+        }
+      },
+  
+      "iconography": {
+        "style": "Line or minimal solid",
+        "cornerRadius": "Rounded",
+        "usage": [
+          "Service indicators",
+          "Navigation aids",
+          "Trust cues"
+        ]
+      },
+  
+      "decorativeElements": {
+        "shapes": [
+          "Soft curves",
+          "Cloud-like separators",
+          "Rounded blobs"
+        ],
+        "purpose": "Reduce rigidity and add friendliness",
+        "placement": [
+          "Section transitions",
+          "Hero/footer edges"
+        ]
+      },
+  
+      "motionAndInteraction": {
+        "animationStyle": "Subtle",
+        "durations": "Fast but smooth",
+        "useCases": [
+          "Hover states",
+          "Accordion open/close",
+          "CTA emphasis"
+        ]
+      },
+  
+      "usabilityPrinciples": {
+        "clarityFirst": true,
+        "ctaVisibility": "High",
+        "contentDensity": "Low to medium",
+        "scanFriendly": true
+      },
+  
+      "aiReplicationGuidelines": {
+        "avoid": [
+          "Harsh colors",
+          "Sharp corners",
+          "Overcrowded layouts",
+          "Aggressive animations"
+        ],
+        "prioritize": [
+          "Whitespace",
+          "Clear hierarchy",
+          "Human-centric feel",
+          "Trust and simplicity"
+        ],
+        "designIntent": "Make services feel easy, safe, and reliable"
+      }
+    }
+  }
+  
