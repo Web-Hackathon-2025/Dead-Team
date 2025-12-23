@@ -16,30 +16,30 @@ namespace Karigar.Application.DTOs.Auth
         [StringLength(100, MinimumLength = 6)]
         public string Password { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Business name is required")]
+        //[Required(ErrorMessage = "Business name is required")]
         [StringLength(200)]
         public string BusinessName { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Phone number is required")]
+        //[Required(ErrorMessage = "Phone number is required")]
         [Phone(ErrorMessage = "Invalid phone number")]
         public string PhoneNumber { get; set; } = string.Empty;
 
-        [Required]
+        //[Required]
         [StringLength(500)]
         public string Skills { get; set; } = string.Empty;
 
-        [Required]
+        //[Required]
         [StringLength(500)]
         public string Address { get; set; } = string.Empty;
 
-        [Required]
+        //[Required]
         [StringLength(100)]
         public string City { get; set; } = string.Empty;
 
-        [Required]
+        //[Required]
         public int ExperienceInYears { get; set; }
 
-        [Required]
+        //[Required]
         public decimal HourlyRate { get; set; }
     }
 }

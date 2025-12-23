@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9PodOqM1/4s=",
+  "dgSpecHash": "AA2eF2PUeRA=",
   "success": true,
-  "projectFilePath": "D:\\HAckathon\\Dead-Team\\src\\Karigar.Infrastructure\\Karigar.Infrastructure.csproj",
+  "projectFilePath": "D:\\fol\\Dead-Team-main\\src\\Karigar.Infrastructure\\Karigar.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abdul\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\abdul\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

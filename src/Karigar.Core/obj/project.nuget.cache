@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JJxRX6n85hc=",
+  "dgSpecHash": "PHRNdYTSquc=",
   "success": true,
-  "projectFilePath": "D:\\HAckathon\\Dead-Team\\src\\Karigar.Core\\Karigar.Core.csproj",
+  "projectFilePath": "D:\\fol\\Dead-Team-main\\src\\Karigar.Core\\Karigar.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abdul\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.9\\microsoft.aspnetcore.cryptography.internal.9.0.9.nupkg.sha512",
     "C:\\Users\\abdul\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\9.0.9\\microsoft.aspnetcore.cryptography.keyderivation.9.0.9.nupkg.sha512",

@@ -64,7 +64,6 @@ builder.Services.AddAuthentication(options =>
 
 // Register Repositories
 builder.Services.AddScoped(typeof(Karigar.Core.Interfaces.Repositories.IBaseRepository<>), typeof(Karigar.Infrastructure.Repositories.BaseRepository<>));
-builder.Services.AddScoped(typeof(ILogger<>), typeof(Logger<>));
 builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.Customer.ICustomerRepository, Karigar.Infrastructure.Repositories.Customer.CustomerRepository>();
 builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.ServiceProvider.IServiceProviderRepository, Karigar.Infrastructure.Repositories.ServiceProvider.ServiceProviderRepository>();
 builder.Services.AddScoped<Karigar.Core.Interfaces.Repositories.Admin.IAdminRepository, Karigar.Infrastructure.Repositories.Admin.AdminRepository>();
