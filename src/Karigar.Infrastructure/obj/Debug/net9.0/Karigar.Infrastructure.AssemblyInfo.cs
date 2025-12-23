@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Karigar.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c7d64d5043e3e40267103238d4c9ad430b65a90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89266f8ee6099af34bfb66bf776b3b3f745f4b01")]
 [assembly: System.Reflection.AssemblyProductAttribute("Karigar.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Karigar.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
